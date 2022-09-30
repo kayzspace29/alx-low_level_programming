@@ -1,6 +1,6 @@
-#ifndef HOLBERTON_H
-#define HOLBERTON_H
-
+#ifndef MAIN_H
+#define MAIN_H
+#include <stdio.h>
 int _putchar(char c);
 
-#endif /* HOLBERTON_H */
+#endif /* MAIN_H */
