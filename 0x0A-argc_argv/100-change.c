@@ -1,4 +1,4 @@
-
+#include <stdio.h>
 #include <stdlib.h>
 #include "holberton.h"
 int change(int cents);
