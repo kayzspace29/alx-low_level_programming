@@ -1,55 +1,66 @@
-#include <stdio.h>
+
 #include <stdlib.h>
-
+#include "holberton.h"
+int change(int cents);
 /**
- * main - function
- *@argc: length of argv
- *@argv: number of argument
- *Return: Always 0
+ * main - Entry Point
+ * @argc: arguments
+ * @argv: array pointing to arguments
+ * Return: 0
  */
-
 int main(int argc, char *argv[])
 {
-/*Declaring variables*/
-int position, total, change, aux;
-int coins[] = {25, 10, 5, 2, 1}; /*Array int*/
+	if (argc != 2)
+	{
+		printf("%s\n", "Error");
+		return (1);
+	}
+	else if (argc < 0)
+	{
+		return (0);
+	}
 
-position = total = change = aux = 0;
+	printf("%d\n", change(atoi(argv[1])));
+	return (0);
+}
 
-if (argc != 2)
+/**
+ * change - get change
+ * @cents: amount of coins from main function
+ * Return: change
+ */
+int change(int cents)
 {
-printf("Error\n");
-return (1);
-}
+	int q = 25, d = 10, n = 5, t = 2, p = 1;
+	int coins;
 
-total = atoi(argv[1]); /*Covert str to int*/
-
-if (total <= 0)
-{
-printf("0\n");
-return (0);
-}
-
-/*Declaring While*/
-
-while (coins[position] != '\0')
-
-{
-if (total >= coins[position])
-{
-aux = (total / coins[position]);
-change += aux;
-total -= coins[position] * aux;
-}
-
-position++;
-
-}
-
-printf("%d\n", change);
-return (0);
-}
-Footer
-© 2022 GitHub, Inc.
-Footer navigation
-}
+	while (cents > 0)
+	{
+		while (cents >= q)
+		{
+			cents -= q;
+			coins++;
+		}
+		while (cents >= d)
+		{
+			cents -= d;
+			coins++;
+		}
+		while (cents >= n)
+		{
+			cents -= n;
+			coins++;
+		}
+		while (cents >= t)
+		{
+			cents -= t;
+			coins++;
+		}
+		while (cents >= p)
+		{
+			cents -= p;
+			coins++;
+		}
+	}
+	return (coins);
+}}
