@@ -31,8 +31,3 @@ listint_t *find_listint_loop(listint_t *head)
 	}
 	return (NULL);
 }
-Footer
-© 2022 GitHub, Inc.
-Footer navigation
-Terms
-
